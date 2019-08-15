@@ -1,0 +1,22 @@
+{
+  "etf/ISHARES-S-P-500-INFORMATION-TECHNOLOGY-SECTOR-UCIS-ETF-USD-ACC-ETF-IE00B3WJKG14": {
+    "2019-08-08": {
+      "value": 10000000,
+      "timestamp": "2019-08-07T21:50:56Z"
+    },
+    "2019-08-15": {
+      "value": 10000000,
+      "timestamp": "2019-08-07T21:50:56Z"
+    }
+  },
+  "aktien/Disney-Aktie-US2546871060": {
+    "2019-07-30": {
+      "value": 10000000,
+      "timestamp": "2019-07-30T21:48:55Z"
+    },
+    "2019-08-15": {
+      "value": 10000000,
+      "timestamp": "2019-08-07T21:50:56Z"
+    }
+  }
+}

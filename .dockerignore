@@ -1,0 +1,8 @@
+# Ignore all
+**
+# Whiteliste
+!package.json
+!createBinaries.js
+!yarn.lock
+!src
+!test

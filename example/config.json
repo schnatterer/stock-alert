@@ -1,0 +1,20 @@
+{
+  "stocks": {
+    "aktien/Disney-Aktie-US2546871060": {
+      "source": "onvista"
+    },
+    "etf/ISHARES-S-P-500-INFORMATION-TECHNOLOGY-SECTOR-UCIS-ETF-USD-ACC-ETF-IE00B3WJKG14": {
+      "source": "onvista",
+      "alerts": [
+        {
+          "value": "-3%",
+          "within": "1 day"
+        },
+        {
+          "value": "-5%",
+          "within": "1 week"
+        }
+      ]
+    }
+  }
+}

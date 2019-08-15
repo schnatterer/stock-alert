@@ -1,0 +1,34 @@
+language: node_js
+
+# Keep in sync with Dockerfile
+node_js: '10.16.2'
+
+services:
+  - docker
+
+addons:
+  sonarqube:
+    organization: "schnatterer-github"
+
+cache:
+    directories:
+      - "node_modules"
+      - '$HOME/.sonar/cache'
+    yarn: true
+
+install:
+  - yarn install
+
+script:
+  - yarn test
+  - sonar-scanner
+  - docker build --no-cache -t stocker-alert .
+  # Do some basic sanity checks with the container.
+  # Allow container to read and write json files
+  - chmod -R o+rw example
+  # Prepare prices.json by setting today's date
+  - sed -i "s/2019-08-14/$(date --date='1 days ago' '+%Y-%m-%d')/" example/prices.json
+  # We expect a warning, because it's unlikely today's prices are near 10000000 (see prices.json). Also grep stderr (2>&1)
+  - (docker run --rm -v $(pwd)/example:/workdir stocker-alert || true) 2>&1 | tee >(cat) | grep 'Price change within 1 day'
+  # Make sure prices.json was updated
+  - grep "$(date '+%Y-%m-%d')" example/prices.json
