@@ -1,5 +1,8 @@
 {
   "stocks": {
+    "GIUD.BE": {
+      "source": "yahoo"
+    },
     "aktien/Disney-Aktie-US2546871060": {
       "source": "onvista"
     },

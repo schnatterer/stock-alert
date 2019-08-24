@@ -27,7 +27,7 @@ script:
   # Allow container to read and write json files
   - chmod -R o+rw example
   # Prepare prices.json by setting today's date
-  - sed -i "s/2019-08-14/$(date --date='1 days ago' '+%Y-%m-%d')/" example/prices.json
+  - sed -i "s/2019-08-15/$(date --date='1 days ago' '+%Y-%m-%d')/" example/prices.json
   # We expect a warning, because it's unlikely today's prices are near 10000000 (see prices.json). Also grep stderr (2>&1)
   - (docker run --rm -v $(pwd)/example:/workdir stocker-alert || true) 2>&1 | tee >(cat) | grep 'Price change within 1 day'
   # Make sure prices.json was updated
