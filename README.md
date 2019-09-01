@@ -30,7 +30,7 @@ Using the docker image is most convenient. It brings its own nodejs installation
 explicitly.
 
 ```bash
-docker run -v $(pwd)/example:/workdir schnatterer/stock-parser
+docker run -v $(pwd)/example:/workdir schnatterer/stock-alert
 ```
 ## Node.js
 
@@ -62,7 +62,7 @@ There is [one exemplary parser implementation](src/parsers/onvistaParser.js) (in
 Example (let's set `<name>` to `paul`):
 
 ```bash
-docker run -v $(pwd)/example:/workdir -v $(pwd)/src/parsers/paulParser.js:/app/src/parsers/paulParser.js stock
+docker run -v $(pwd)/example:/workdir -v $(pwd)/src/parsers/paulParser.js:/app/src/parsers/paulParser.js schnatterer/stock-alert
 ```
 
 PRs for new parsers welcome.
